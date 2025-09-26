@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <style>
+        ul {
+            background-color: yellow;
+            height: auto;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        button:hover {
+            background-color: rgb(100, 100, 100);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnList">Get Data</button>
+    <ul id="userList"></ul>
+</body>
+
+</html>
+<script>
+    function getList() {
+        //fetch
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => response.json())
+            .then(data => {
+                const userList = document.getElementById("userList");
+                userList.innerHTML = "";
+                data.forEach(user => {
+                    const li = document.createElement("li");
+                    li.textContent = `${user.name} - ${user.email}`;
+                    userList.appendChild(li);
+                });
+                })
+        .catch (error => console.error("에러 발생:", error));
+    
+}
+
+    document.getElementById("btnList").addEventListener("click", getList);
+</script>

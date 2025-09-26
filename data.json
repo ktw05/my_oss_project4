@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "HTML5와 웹 접근성",
+      "author": "김철수",
+      "year": 2023
+    },
+    {
+      "id": 2,
+      "title": "시맨틱 마크업 가이드",
+      "author": "이영희",
+      "year": 2022
+    },
+    {
+      "id": 3,
+      "title": "JavaScript 비동기 프로그래밍",
+      "author": "박민준",
+      "year": 2024
+    },
+    {
+      "id": 4,
+      "title": "CSS Flexbox와 Grid 마스터",
+      "author": "최지우",
+      "year": 2021
+    }
+  ]
+}

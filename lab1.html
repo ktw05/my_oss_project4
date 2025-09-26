@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stopwatch</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #time {
+            font-size: 30px;
+            margin-bottom: 10px;
+            background-color: yellow;
+            width: auto;
+            height: 100px;
+            color: blue;
+            line-height: 100px;
+        }
+
+        #start {
+            background-color: blue;
+            color: white;
+        }
+
+        #stop {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id='time'>0</p>
+        <button id='start'>시작</button>
+        <button id='stop'>중지</button>
+    </div>
+</body>
+<script>
+    let time = 0;
+    let intervalId;
+
+    const timeDisplay = document.getElementById('time');
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+
+    function startTimer() {
+        time = 0;
+        timeDisplay.innerText = time;
+        if (!intervalId) {
+            intervalId = setInterval(() => {
+                time++;
+                timeDisplay.innerText = time;
+            }, 1000);
+        }
+    }
+
+    function stopTimer() {
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    startButton.addEventListener('click', startTimer);
+    stopButton.addEventListener('click', stopTimer);
+</script>
+</html>
